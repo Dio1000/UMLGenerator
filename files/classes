@@ -1,0 +1,17 @@
+Class:
+Person
+
+Class:
+Student
+
+Attributes:
+Name, string, 0
+Age, int, 0
+isEnrolled, bool, 0
+
+Methods:
+getName, string, 1
+setName, void, 1
+getAge, int, 1
+setAge, void, 1
+checkEnrollment, bool, 1
