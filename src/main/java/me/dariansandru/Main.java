@@ -11,4 +11,4 @@ public class Main {
     }
 }
 
-//TODO fix off-by-one problem with setClassName
+//TODO make Enum, AbstractClass diagrams

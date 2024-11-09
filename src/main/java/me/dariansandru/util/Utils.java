@@ -2,7 +2,7 @@ package me.dariansandru.util;
 
 public class Utils {
 
-    public static final int offset = 10;
+    public static final int offset = 5;
 
     public static void displayBorder(int length){
         System.out.print("|");
@@ -13,14 +13,37 @@ public class Utils {
     }
 
     public static void displayClassName(String className, int maxLength){
+        int charCount = 1;
+
         System.out.print("|");
         for (int i = 1 ; i < offset + (maxLength - className.length()) / 2 ; i++){
             System.out.print(" ");
+            charCount++;
         }
         System.out.print(className);
+        charCount += className.length();
 
-        for (int i = 1 ; i < offset + (maxLength - className.length()) / 2 ; i++){
+        while(charCount < maxLength + 2 * offset - 1){
             System.out.print(" ");
+            charCount++;
+        }
+        System.out.println("|");
+    }
+
+    public static void displayInterfaceName(String interfaceName, int maxLength){
+        int charCount = 1;
+
+        System.out.print("|");
+        for (int i = 1 ; i < offset + (maxLength - interfaceName.length()) / 2 ; i++){
+            System.out.print(" ");
+            charCount++;
+        }
+        System.out.print(interfaceName);
+        charCount += interfaceName.length();
+
+        while(charCount < maxLength + 2 * offset - 1){
+            System.out.print(" ");
+            charCount++;
         }
         System.out.println("|");
     }

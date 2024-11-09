@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ClassDiagram implements Diagram {
+public class InterfaceDiagram implements Diagram{
 
     private String className;
     private int attributeNumber;
@@ -23,8 +23,8 @@ public class ClassDiagram implements Diagram {
 
     private int longestName;
 
-    public ClassDiagram(){
-        this.className = "Class";
+    public InterfaceDiagram(){
+        this.className = "Interface";
         this.attributeNumber = 0;
         this.methodNumber = 0;
         this.longestName = className.length();
@@ -94,9 +94,9 @@ public class ClassDiagram implements Diagram {
 
     @Override
     public void display(){
-        // Displays class name with borders
+        // Displays interface name with borders
         Utils.displayBorder(longestName);
-        Utils.displayClassName(className, longestName);
+        Utils.displayInterfaceName(className, longestName);
         Utils.displayBorder(longestName);
 
         // Displays attributes with borders
@@ -111,8 +111,7 @@ public class ClassDiagram implements Diagram {
         }
         Utils.displayBorder(longestName);
 
-        Utils.displayClassName("<Class>", longestName);
+        Utils.displayInterfaceName("<Interface>", longestName);
         Utils.displayBorder(longestName);
     }
-
 }
