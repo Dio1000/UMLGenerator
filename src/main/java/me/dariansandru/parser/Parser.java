@@ -3,6 +3,8 @@ package me.dariansandru.parser;
 import me.dariansandru.domain.diagram.ClassDiagram;
 import me.dariansandru.domain.diagram.InterfaceDiagram;
 import me.dariansandru.domain.factory.DiagramFactory;
+import me.dariansandru.io.InputDevice;
+import me.dariansandru.io.OutputDevice;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,25 +12,8 @@ import java.util.*;
 
 public class Parser {
 
-    public List<String> readFile(String file) {
-        List<String> lineList = new ArrayList<>();
-
-        try {
-            File myFile = new File(file);
-            Scanner reader = new Scanner(myFile);
-
-            while (reader.hasNextLine()) {
-                String data = reader.nextLine();
-                if (!data.isEmpty()) lineList.add(data);
-            }
-            reader.close();
-
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
-
-        return lineList;
-    }
+    InputDevice inputDevice = new InputDevice();
+    OutputDevice outputDevice = new OutputDevice();
 
     public void generateClasses(List<String> lineList){
         List<String> classes = new ArrayList<>();

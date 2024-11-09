@@ -5,11 +5,11 @@ public class Utils {
     public static final int offset = 5;
 
     public static void displayBorder(int length){
-        System.out.print("|");
+        System.out.print("+");
         for (int i = 1 ; i < length + 2 * offset - 1; i++){
             System.out.print("-");
         }
-        System.out.println("|");
+        System.out.println("+");
     }
 
     public static void displayClassName(String className, int maxLength){
