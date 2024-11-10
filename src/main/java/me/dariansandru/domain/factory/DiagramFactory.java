@@ -1,8 +1,6 @@
 package me.dariansandru.domain.factory;
 
-import me.dariansandru.domain.diagram.ClassDiagram;
-import me.dariansandru.domain.diagram.Diagram;
-import me.dariansandru.domain.diagram.InterfaceDiagram;
+import me.dariansandru.domain.diagram.*;
 
 public class DiagramFactory implements Factory<Diagram>{
     public DiagramFactory(){
@@ -11,14 +9,12 @@ public class DiagramFactory implements Factory<Diagram>{
 
     @Override
     public Diagram getObject(String object) {
-        if (object.equals("class")) {
-            return new ClassDiagram();
-        }
-        else if (object.equals("interface")){
-            return new InterfaceDiagram();
-        }
-        else {
-            throw new IllegalArgumentException("Class " + object + " does not exist!");
-        }
+        return switch (object) {
+            case "class" -> new ClassDiagram();
+            case "interface" -> new InterfaceDiagram();
+            case "abstract" -> new AbstractClassDiagram();
+            case "enum" -> new EnumDiagram();
+            default -> throw new IllegalArgumentException("Class " + object + " does not exist!");
+        };
     }
 }

@@ -38,4 +38,4 @@ public class Main {
     }
 }
 
-//TODO make Enum, AbstractClass diagrams
+//TODO add warnings

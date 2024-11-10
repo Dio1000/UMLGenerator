@@ -109,3 +109,25 @@ displayAttributeName, void, 1
 displayMethodName, void, 1
 
 
+
+Enum:
+Colour
+
+Attributes:
+WHITE, colour, 0
+BLACK, colour, 0
+
+Methods:
+getColour, colour, 1
+toString, string, 1
+
+
+
+Abstract Class:
+Writer
+
+Methods:
+writeWithOffset, void, 1
+writeWithoutOffset, void, 1
+
+
