@@ -9,4 +9,7 @@ import java.util.Map;
 public interface Displayable {
     public void display(List<String> classes, Map<String, List<String>> classAttributesDetails,
                         Map<String, List<String>> classMethodsDetails);
+
+    public void displayToFile(List<String> classes, Map<String, List<String>> classAttributesDetails,
+                              Map<String, List<String>> classMethodsDetails, String filePath);
 }

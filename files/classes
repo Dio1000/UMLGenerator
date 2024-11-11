@@ -1,133 +1,161 @@
 Interface:
-Diagram
+GameController
 
 Attributes:
 
 Methods:
-getClassName, string, 1
-setClassName, void, 1
-
-getAttributeNumber, int, 1
-setAttributeNumber, void, 1
-
-addAttribute, void, 1
-addTypedAttribute, void, 1
-
-display, void, 1
-
-
+play, String, 1
+reset, void, 1
 
 Class:
-ClassDiagram
+ChessController
 
 Attributes:
-className, string, 0
-attributeNumber, int, 0
-methodNumber, int, 0
-
-attributes, list(string), 0
-methods, list(string), 0
-
-attributeModifierMap, map(string -> int), 0
-methodModifierMap, map(string -> int), 0
-
-attributeTypeMap, map(string -> string), 0
-methodReturnMap, map(string -> string), 0
-
-longestName, int, 0
+turn, int, 0
+turns, List<String>, 0
+chessRound, ChessRound, 0
+whitePiecePlayer, Player, 0
+blackPiecePlayer, Player, 0
 
 Methods:
-ClassDiagram, void, 1
-
-
-
-Class:
-InterfaceDiagram
-
-Attributes:
-className, string, 0
-attributeNumber, int, 0
-methodNumber, int, 0
-
-attributes, list(string), 0
-methods, list(string), 0
-
-attributeModifierMap, map(string -> int), 0
-methodModifierMap, map(string -> int), 0
-
-attributeTypeMap, map(string -> string), 0
-methodReturnMap, map(string -> string), 0
-
-longestName, int, 0
-
-Methods:
-InterfaceDiagram, void, 1
-
-
+ChessController, void, 1
+getTurns, List<String>, 1
+getPiece, Piece, 1
+getTurnCount, int, 1
+getWhitePiecePlayer, Player, 1
+getBlackPiecePlayer, Player, 1
+getChessRound, ChessrOUND, 1
+reset, void, 1
+play, String, 1
+addTurn, void, 1
+isGameFinished, bool, 1
 
 Interface:
-Factory
+Piece
 
 Attributes:
 
 Methods:
-getObject, generic T, 1
-
-
-
-Class:
-DiagramFactory
-
-Attributes:
-
-Methods:
-DiagramFactory, void, 1
-
-
-
-Class:
-Parser
-
-Attributes:
-
-Methods:
-readFile, list(string), 1
-generateClasses, void, 1
-displayInterfaces, void, 1
-displayClasses, void, 1
-
-
-
-Class:
-Utils
-
-Methods:
-displayBorder, void, 1
-displayClassName void, 1
-displayInterfaceName, void, 1
-displayAttributeName, void, 1
-displayMethodName, void, 1
-
-
+getName, String, 1
+getRepresentation, String, 1
+getColour, PieceColour, 1
+isLegalMove, bool, 1
+getDisplay, string, 1
+getPoints, int, 1
+setDisplay, void, 1
 
 Enum:
-Colour
+Piece
 
 Attributes:
-WHITE, colour, 0
-BLACK, colour, 0
 
 Methods:
-getColour, colour, 1
-toString, string, 1
+toString, String, 1
 
+Class:
+Manual
 
-
-Abstract Class:
-Writer
+Attributes:
 
 Methods:
-writeWithOffset, void, 1
-writeWithoutOffset, void, 1
+showRules, void, 1
 
+Class:
+ChessRound
 
+Attributes:
+whitePiecePlayer, Player, 0
+blackPiecePlayer, Player, 0
+pieces, Piece[][], 0
+
+Methods:
+chessRound, void, 1
+getPiece, Piece, 1
+getPieces, Piece[][], 1
+resetBoard, void, 1
+setPieceLocation, void, 1
+handleMove, String, 1
+movePiece, bool, 1
+checkMovePiece, bool, 1
+isKingChecked, bool, 1
+getKingValidMoves, Set<String>, 1
+isCheckmate, bool, 1
+@Override isCheckmate, bool, 1
+isStalemate, bool, 1
+
+Class:
+Bishop
+
+Attributes:
+colour, PieceColour, 0
+display, String, 0
+points, int, 0
+
+Methods:
+Bishop, void, 1
+
+Class:
+EmptyPiece
+
+Attributes:
+colour, PieceColour, 0
+display, String, 0
+points, int, 0
+
+Methods:
+EmptyPiece, void, 1
+
+Class:
+King
+
+Attributes:
+colour, PieceColour, 0
+display, String, 0
+points, int, 0
+
+Methods:
+King, void, 1
+
+Class:
+Knight
+
+Attributes:
+colour, PieceColour, 0
+display, String, 0
+points, int, 0
+
+Methods:
+Knight, void, 1
+
+Class:
+Pawn
+
+Attributes:
+colour, PieceColour, 0
+display, String, 0
+points, int, 0
+
+Methods:
+Pawn, void, 1
+
+Class:
+Queen
+
+Attributes:
+colour, PieceColour, 0
+display, String, 0
+points, int, 0
+
+Methods:
+Queen, void, 1
+
+Class:
+Rook
+
+Attributes:
+colour, PieceColour, 0
+display, String, 0
+points, int, 0
+
+Methods:
+Rook, void, 1

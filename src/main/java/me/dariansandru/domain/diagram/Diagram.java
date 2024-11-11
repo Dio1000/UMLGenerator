@@ -12,4 +12,5 @@ public interface Diagram {
     public void addMethod(String method, String returnType, int modifier);
 
     public void display();
+    public void displayToFile(String filePath);
 }

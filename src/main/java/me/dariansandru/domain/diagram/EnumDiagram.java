@@ -94,6 +94,7 @@ public class EnumDiagram implements Diagram {
     @Override
     public void display(){
         // Displays class name with borders
+        // TODO make separate functions for Enums
         Utils.displayBorder(longestName);
         Utils.displayClassName(className, longestName);
         Utils.displayBorder(longestName);
@@ -112,5 +113,10 @@ public class EnumDiagram implements Diagram {
 
         Utils.displayClassName("<Enum>", longestName);
         Utils.displayBorder(longestName);
+    }
+
+    @Override
+    public void displayToFile(String filePath) {
+
     }
 }

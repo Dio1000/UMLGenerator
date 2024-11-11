@@ -27,6 +27,7 @@ public class Main {
             try{
                 Parser parser = new Parser();
                 List<String> lines = inputDevice.readFile(args[1]);
+                parser.generateClassesToFile(lines, args[2]);
 
             }catch (Exception e){
                 System.out.println(e.getMessage());

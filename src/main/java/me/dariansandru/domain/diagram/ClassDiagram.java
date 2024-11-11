@@ -1,5 +1,6 @@
 package me.dariansandru.domain.diagram;
 
+import me.dariansandru.io.OutputDevice;
 import me.dariansandru.util.Utils;
 
 import java.util.ArrayList;
@@ -113,6 +114,32 @@ public class ClassDiagram implements Diagram {
 
         Utils.displayClassName("<Class>", longestName);
         Utils.displayBorder(longestName);
+    }
+
+    @Override
+    public void displayToFile(String filePath) {
+        OutputDevice outputDevice = new OutputDevice();
+        StringBuilder classDiagram = new StringBuilder();
+
+        // Builds class name with borders
+        classDiagram.append(Utils.getBorder(longestName)).append(Utils.getClassName(className, longestName)).append(Utils.getBorder(longestName));
+
+        // Builds attributes with borders
+        for (String attribute : attributes){
+            classDiagram.append(Utils.getAttributeName(attribute + ": " + attributeTypeMap.get(attribute), attributeModifierMap.get(attribute), longestName));
+        }
+        classDiagram.append(Utils.getBorder(longestName));
+
+        // Builds methods with borders
+        for (String method : methods){
+            classDiagram.append(Utils.getAttributeName(method + ": " + attributeTypeMap.get(method), attributeModifierMap.get(method), longestName));
+        }
+        classDiagram.append(Utils.getBorder(longestName));
+
+        classDiagram.append(Utils.getClassName("<Class>", longestName));
+        classDiagram.append(Utils.getBorder(longestName));
+
+        System.out.println(classDiagram.toString());
     }
 
 }

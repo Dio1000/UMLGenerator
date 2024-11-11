@@ -94,6 +94,7 @@ public class AbstractClassDiagram implements Diagram {
     @Override
     public void display(){
         // Displays class name with borders
+        // TODO make separate functions for Abstract Classes
         Utils.displayBorder(longestName);
         Utils.displayClassName(className, longestName);
         Utils.displayBorder(longestName);
@@ -112,5 +113,10 @@ public class AbstractClassDiagram implements Diagram {
 
         Utils.displayClassName("<Abstract Class>", longestName);
         Utils.displayBorder(longestName);
+    }
+
+    @Override
+    public void displayToFile(String filePath) {
+
     }
 }

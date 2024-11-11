@@ -114,4 +114,9 @@ public class InterfaceDiagram implements Diagram{
         Utils.displayInterfaceName("<Interface>", longestName);
         Utils.displayBorder(longestName);
     }
+
+    @Override
+    public void displayToFile(String filePath) {
+
+    }
 }
