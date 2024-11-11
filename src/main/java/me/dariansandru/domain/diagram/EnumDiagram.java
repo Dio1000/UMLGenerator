@@ -1,7 +1,9 @@
 package me.dariansandru.domain.diagram;
 
+import me.dariansandru.io.OutputDevice;
 import me.dariansandru.util.Utils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -116,7 +118,29 @@ public class EnumDiagram implements Diagram {
     }
 
     @Override
-    public void displayToFile(String filePath) {
+    public void displayToFile(String filePath) throws IOException {
+        OutputDevice outputDevice = new OutputDevice();
+        StringBuilder classDiagram = new StringBuilder();
 
+        // Builds class name with borders
+        classDiagram.append(Utils.getBorder(longestName)).append("\n").
+                append(Utils.getClassName(className, longestName)).append("\n").
+                append(Utils.getBorder(longestName)).append("\n");
+
+        // Builds attributes with borders
+        for (String attribute : attributes){
+            classDiagram.append(Utils.getAttributeName(attribute + ": " + attributeTypeMap.get(attribute), attributeModifierMap.get(attribute), longestName)).append("\n");
+        }
+        classDiagram.append(Utils.getBorder(longestName)).append("\n");
+
+        // Builds methods with borders
+        for (String method : methods){
+            classDiagram.append(Utils.getMethodName(method + ": " + methodReturnTypeMap.get(method), methodModifierMap.get(method), longestName)).append("\n");
+        }
+        classDiagram.append(Utils.getBorder(longestName)).append("\n");
+
+        classDiagram.append(Utils.getClassName("<Enum>", longestName)).append("\n");
+        classDiagram.append(Utils.getBorder(longestName)).append("\n");
+        outputDevice.appendToFile(Utils.getLinesFromString(classDiagram.toString()), filePath);
     }
 }

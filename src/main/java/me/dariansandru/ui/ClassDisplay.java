@@ -3,6 +3,7 @@ package me.dariansandru.ui;
 import me.dariansandru.domain.diagram.ClassDiagram;
 import me.dariansandru.domain.factory.DiagramFactory;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -46,7 +47,7 @@ public class ClassDisplay implements Displayable {
 
     @Override
     public void displayToFile(List<String> classes, Map<String, List<String>> classAttributesDetails,
-                              Map<String, List<String>> classMethodsDetails, String filePath) {
+                              Map<String, List<String>> classMethodsDetails, String filePath) throws IOException {
         DiagramFactory diagramFactory = new DiagramFactory();
 
         for (String cls : classes){

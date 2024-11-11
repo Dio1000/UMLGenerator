@@ -27,6 +27,8 @@ public class Main {
             try{
                 Parser parser = new Parser();
                 List<String> lines = inputDevice.readFile(args[1]);
+
+                outputDevice.emptyFile(args[2]);
                 parser.generateClassesToFile(lines, args[2]);
 
             }catch (Exception e){
@@ -40,3 +42,4 @@ public class Main {
 }
 
 //TODO add warnings
+//TODO make Diagram / Displayable abstract class

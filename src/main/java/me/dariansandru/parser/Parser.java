@@ -13,6 +13,7 @@ import me.dariansandru.ui.InterfaceDisplay;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 
 public class Parser {
@@ -119,7 +120,7 @@ public class Parser {
         enumDisplay.display(enums, classAttributesDetails, classMethodsDetails);
     }
 
-    public void generateClassesToFile(List<String> lineList, String filePath){
+    public void generateClassesToFile(List<String> lineList, String filePath) throws IOException {
         List<String> classes = new ArrayList<>();
         List<String> interfaces = new ArrayList<>();
         List<String> abstractClasses = new ArrayList<>();

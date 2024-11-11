@@ -1,5 +1,7 @@
 package me.dariansandru.util;
 
+import java.util.List;
+
 public class Utils {
 
     public static final int offset = 5;
@@ -144,5 +146,9 @@ public class Utils {
         stringBuilder.append("|");
 
         return stringBuilder.toString();
+    }
+
+    public static List<String> getLinesFromString(String string){
+        return List.of(string.split("\n"));
     }
 }

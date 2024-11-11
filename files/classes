@@ -1,161 +1,43 @@
-Interface:
-GameController
-
-Attributes:
-
-Methods:
-play, String, 1
-reset, void, 1
-
 Class:
-ChessController
+TestClass
 
 Attributes:
-turn, int, 0
-turns, List<String>, 0
-chessRound, ChessRound, 0
-whitePiecePlayer, Player, 0
-blackPiecePlayer, Player, 0
+attr1, string, 1
+attr2, int, 0
 
 Methods:
-ChessController, void, 1
-getTurns, List<String>, 1
-getPiece, Piece, 1
-getTurnCount, int, 1
-getWhitePiecePlayer, Player, 1
-getBlackPiecePlayer, Player, 1
-getChessRound, ChessrOUND, 1
-reset, void, 1
-play, String, 1
-addTurn, void, 1
-isGameFinished, bool, 1
+method1, string, 1
+method2, string, 1
 
 Interface:
-Piece
+TestInterface
 
 Attributes:
+attr1, string, 1
+attr2, int, 0
 
 Methods:
-getName, String, 1
-getRepresentation, String, 1
-getColour, PieceColour, 1
-isLegalMove, bool, 1
-getDisplay, string, 1
-getPoints, int, 1
-setDisplay, void, 1
+method1, string, 1
+method2, string, 1
 
 Enum:
-Piece
+TestEnum
 
 Attributes:
+attr1, string, 1
+attr2, int, 0
 
 Methods:
-toString, String, 1
+method1, string, 1
+method2, string, 1
 
-Class:
-Manual
+Abstract Class:
+TestAbstractClass
 
 Attributes:
+attr1, string, 1
+attr2, int, 0
 
 Methods:
-showRules, void, 1
-
-Class:
-ChessRound
-
-Attributes:
-whitePiecePlayer, Player, 0
-blackPiecePlayer, Player, 0
-pieces, Piece[][], 0
-
-Methods:
-chessRound, void, 1
-getPiece, Piece, 1
-getPieces, Piece[][], 1
-resetBoard, void, 1
-setPieceLocation, void, 1
-handleMove, String, 1
-movePiece, bool, 1
-checkMovePiece, bool, 1
-isKingChecked, bool, 1
-getKingValidMoves, Set<String>, 1
-isCheckmate, bool, 1
-@Override isCheckmate, bool, 1
-isStalemate, bool, 1
-
-Class:
-Bishop
-
-Attributes:
-colour, PieceColour, 0
-display, String, 0
-points, int, 0
-
-Methods:
-Bishop, void, 1
-
-Class:
-EmptyPiece
-
-Attributes:
-colour, PieceColour, 0
-display, String, 0
-points, int, 0
-
-Methods:
-EmptyPiece, void, 1
-
-Class:
-King
-
-Attributes:
-colour, PieceColour, 0
-display, String, 0
-points, int, 0
-
-Methods:
-King, void, 1
-
-Class:
-Knight
-
-Attributes:
-colour, PieceColour, 0
-display, String, 0
-points, int, 0
-
-Methods:
-Knight, void, 1
-
-Class:
-Pawn
-
-Attributes:
-colour, PieceColour, 0
-display, String, 0
-points, int, 0
-
-Methods:
-Pawn, void, 1
-
-Class:
-Queen
-
-Attributes:
-colour, PieceColour, 0
-display, String, 0
-points, int, 0
-
-Methods:
-Queen, void, 1
-
-Class:
-Rook
-
-Attributes:
-colour, PieceColour, 0
-display, String, 0
-points, int, 0
-
-Methods:
-Rook, void, 1
+method1, string, 1
+method2, string, 1

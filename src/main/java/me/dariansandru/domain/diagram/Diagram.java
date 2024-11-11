@@ -1,5 +1,7 @@
 package me.dariansandru.domain.diagram;
 
+import java.io.IOException;
+
 public interface Diagram {
 
     public String getClassName();
@@ -12,5 +14,5 @@ public interface Diagram {
     public void addMethod(String method, String returnType, int modifier);
 
     public void display();
-    public void displayToFile(String filePath);
+    public void displayToFile(String filePath) throws IOException;
 }
